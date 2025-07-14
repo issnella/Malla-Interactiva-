@@ -1,7 +1,11 @@
 fetch('data.json')
   .then(res => res.json())
   .then(data => {
-    const nodes = data.courses.map(c => ({ id: c.id, name: c.name }));
+    const nodes = data.courses.map(c => ({
+      id: c.id,
+      name: c.name,
+      status: c.status || 'pendiente'
+    }));
     const links = data.courses.flatMap(c =>
       c.prereqs.map(pr => ({ source: pr, target: c.id }))
     );
@@ -14,8 +18,8 @@ fetch('data.json')
       .attr("height", height);
 
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(80))
-      .force("charge", d3.forceManyBody().strength(-400))
+      .force("link", d3.forceLink(links).id(d => d.id).distance(130))
+      .force("charge", d3.forceManyBody().strength(-600))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
     const link = svg.append("g")
@@ -38,13 +42,33 @@ fetch('data.json')
         .on("drag", dragged)
         .on("end", dragended));
 
-    node.append("circle")
-      .attr("r", 20);
+    node.append("rect")
+      .attr("width", 150)
+      .attr("height", 40)
+      .attr("x", -75)
+      .attr("y", -20)
+      .attr("rx", 8)
+      .attr("ry", 8);
 
     node.append("text")
-      .attr("dy", 4)
-      .attr("x", 25)
+      .attr("x", -65)
+      .attr("y", 0)
+      .attr("alignment-baseline", "middle")
       .text(d => d.id);
+
+    node.append("text")
+      .attr("class", "status-icon")
+      .attr("x", 65)
+      .attr("y", 0)
+      .attr("alignment-baseline", "middle")
+      .text(d => {
+        switch (d.status) {
+          case "aprobado": return "✅";
+          case "bloqueado": return "🔒";
+          case "pendiente": return "⏳";
+          default: return "";
+        }
+      });
 
     simulation.on("tick", () => {
       link
@@ -73,6 +97,4 @@ fetch('data.json')
       d.fy = null;
     }
   })
-  .catch(err => {
-    console.error('Error cargando data.json:', err);
-  });
+  .catch(err => console.error("Error cargando data.json:", err));
