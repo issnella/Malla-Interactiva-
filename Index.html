@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Malla Ingeniería Civil PUCV</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      margin: 20px;
+    }
+    svg {
+      width: 100%;
+      height: 90vh;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+    }
+    .link {
+      stroke: #aaa;
+      stroke-width: 1.5px;
+    }
+    .node circle {
+      stroke: #333;
+      stroke-width: 1.5px;
+      fill: #6baed6;
+      cursor: pointer;
+      transition: fill 0.2s;
+    }
+    .node circle:hover {
+      fill: #2171b5;
+    }
+    .node text {
+      font-size: 10px;
+      pointer-events: none;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Malla Interactiva - Ingeniería Civil PUCV</h2>
+  <svg id="vis"></svg>
+  <script src="script.js"></script>
+</body>
+</html>
