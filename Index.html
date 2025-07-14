@@ -10,34 +10,42 @@
       text-align: center;
       margin: 0;
       padding: 0;
+      background-color: #f3e8ff; /* lila pastel suave */
     }
     h2 {
       margin: 20px;
+      color: #5a3e85;
     }
     svg {
       width: 100%;
       height: 90vh;
-      border: 1px solid #ccc;
-      background: #f9f9f9;
+      border: none;
     }
     .link {
-      stroke: #aaa;
+      stroke: #bbb;
       stroke-width: 1.5px;
     }
-    .node circle {
-      stroke: #333;
+    .node rect {
+      fill: white;
+      stroke: #ccc;
       stroke-width: 1.5px;
-      fill: #6baed6;
+      rx: 8;
+      ry: 8;
+      filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.15));
       cursor: pointer;
-      transition: fill 0.2s;
-    }
-    .node circle:hover {
-      fill: #2171b5;
     }
     .node text {
-      font-size: 10px;
+      font-size: 11px;
       pointer-events: none;
       user-select: none;
+      fill: #333;
+    }
+    .status-icon {
+      font-size: 16px;
+      pointer-events: none;
+      user-select: none;
+      dominant-baseline: middle;
+      text-anchor: end;
     }
   </style>
 </head>
