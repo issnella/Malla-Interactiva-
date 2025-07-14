@@ -1,0 +1,61 @@
+{
+  "courses": [
+    { "id": "CIV1001", "name": "Desafíos en Ingeniería Civil", "prereqs": [] },
+    { "id": "CIV1002", "name": "Introducción a la Geometría", "prereqs": [] },
+    { "id": "FIN100-296", "name": "Comunicación Efectiva", "prereqs": [] },
+    { "id": "FIS1035", "name": "Introducción a la Física", "prereqs": [] },
+    { "id": "MAT1001", "name": "Fundamentos de Matemáticas", "prereqs": [] },
+
+    { "id": "CIV1006", "name": "Programación Aplicada", "prereqs": [] },
+    { "id": "FIS1002", "name": "Física para Ingeniería", "prereqs": ["FIS1035", "MAT1001"] },
+    { "id": "MAT1002", "name": "Cálculo Diferencial e Integral", "prereqs": ["MAT1001"] },
+    { "id": "MAT1004", "name": "Álgebra Lineal", "prereqs": ["MAT1001"] },
+
+    { "id": "CIV2010", "name": "Topografía", "prereqs": ["CIV1002"] },
+    { "id": "CIV2012", "name": "Mecánica Estática", "prereqs": ["MAT1002", "FIS1002"] },
+    { "id": "CIV2013", "name": "Materiales de Ingeniería", "prereqs": ["FIS1035", "CIV1001"] },
+    { "id": "FIS1037", "name": "Termodinámica y Ondas", "prereqs": ["FIS1002", "MAT1002"] },
+    { "id": "MAT1003", "name": "Cálculo en Varias Variables", "prereqs": ["MAT1002"] },
+
+    { "id": "CIV2017", "name": "Mecánica Dinámica", "prereqs": ["CIV2012", "MAT1004"] },
+    { "id": "CIV2021", "name": "Procesos y Técnicas de Construcción", "prereqs": ["CIV2010", "CIV2013"] },
+    { "id": "FIS1038", "name": "Electromagnetismo", "prereqs": ["FIS1037"] },
+    { "id": "MAT1005", "name": "Ecuaciones Diferenciales", "prereqs": ["MAT1003"] },
+    { "id": "QUI123", "name": "Fundamentos de Química", "prereqs": [] },
+
+    { "id": "CIV3022", "name": "Mecánica de Sólidos", "prereqs": ["CIV2012", "CIV2013"] },
+    { "id": "CIV3023", "name": "Mecánica de Fluidos", "prereqs": ["MAT1005", "CIV2017"] },
+    { "id": "CIV3024", "name": "Economía", "prereqs": [] },
+    { "id": "CIV3025", "name": "Probabilidad y Estadística", "prereqs": ["MAT1003"] },
+    { "id": "ING9001", "name": "Inglés 1", "prereqs": [] },
+
+    { "id": "CIV3028", "name": "Geomecánica", "prereqs": ["CIV3022", "CIV3023"] },
+    { "id": "CIV3029", "name": "Análisis Estructural", "prereqs": ["CIV3022", "CIV2017", "MAT1005"] },
+    { "id": "CIV3030", "name": "Hidráulica", "prereqs": ["CIV3023"] },
+    { "id": "CIV3031", "name": "Métodos Numéricos", "prereqs": ["CIV1006", "MAT1005"] },
+    { "id": "ING9002", "name": "Inglés 2", "prereqs": ["ING9001"] },
+
+    { "id": "CIV4034", "name": "Mecánica de Suelos", "prereqs": ["CIV3022", "CIV3023"] },
+    { "id": "CIV4035", "name": "Diseño en Acero", "prereqs": ["CIV3029"] },
+    { "id": "CIV4036", "name": "Hidrología", "prereqs": ["CIV3025"] },
+    { "id": "CIV4037", "name": "Preparación y Evaluación de Proyectos", "prereqs": ["CIV2021", "CIV3024"] },
+    { "id": "ING9003", "name": "Inglés 3", "prereqs": ["ING9002"] },
+
+    { "id": "CIV4040", "name": "Hormigón Armado", "prereqs": ["CIV3029"] },
+    { "id": "CIV4041", "name": "Ingeniería Sísmica", "prereqs": ["CIV3029", "CIV3031"] },
+    { "id": "CIV4042", "name": "Diseño de Caminos", "prereqs": ["CIV2013"] },
+    { "id": "CIV4043", "name": "Planificación y Control de Proyectos", "prereqs": ["CIV3025", "CIV4037"] },
+    { "id": "ING9004", "name": "Inglés 4", "prereqs": ["ING9003"] },
+
+    { "id": "CIV5046", "name": "Mecánica de Suelos Aplicada", "prereqs": ["CIV3028", "CIV4034"] },
+    { "id": "CIV5047", "name": "Ingeniería Sanitaria", "prereqs": ["CIV4036", "CIV3030"] },
+    { "id": "CIV5050", "name": "Legislación Aplicada", "prereqs": [] },
+
+    { "id": "CIV5051", "name": "Seminario de Ingeniería Civil", "prereqs": ["CIV4034", "CIV4041", "CIV4043"] },
+    { "id": "CIV5052", "name": "Proyecto Integrador", "prereqs": ["CIV4034", "CIV4041", "CIV4043"] },
+    { "id": "CIV5053", "name": "Comunicación, Liderazgo y Equipos", "prereqs": ["FIN100-296"] },
+
+    { "id": "CIV6055", "name": "Seminario de Ingeniería Civil (Final)", "prereqs": ["CIV5051"] },
+    { "id": "CIV6057", "name": "Innovación y Emprendimiento", "prereqs": [] }
+  ]
+}
